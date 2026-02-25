@@ -1,3 +1,8 @@
+---
+name: 5g-nr-rlc
+description: Expert reference for the 5G NR Radio Link Control (RLC) protocol per 3GPP TS 38.322 v19.1.0. Use when the user asks about RLC modes (TM/UM/AM), PDU formats, state variables, timers, ARQ, segmentation, NTN/sidelink/MBS RLC, or implementing/debugging RLC entities.
+---
+
 # Skill: 5G NR RLC Protocol (TS 38.322 v19.1.0)
 
 ## Trigger
