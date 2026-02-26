@@ -31,13 +31,38 @@ Radio Link Control — the layer between PDCP and MAC.
 
 ---
 
+### `5g-nr-mac-scheduling/` — MAC Layer & Radio Resource Scheduling (TS 38.321 v19.1.0)
+
+Medium Access Control — the layer between RLC and the physical layer, responsible for scheduling and resource management.
+
+**Covers:**
+- MAC architecture: logical/transport/physical channel mapping, MAC sublayer functions
+- MAC PDU structure: subheader formats, LCID values, MAC CE ordering
+- RNTI types: C-RNTI, CS-RNTI, TC-RNTI, RA-RNTI, P-RNTI, SI-RNTI and usage
+- DL/UL scheduling: DCI formats (0_0/0_1/0_2, 1_0/1_1/1_2), PDCCH search spaces, MCS/RV tables
+- Logical Channel Prioritization (LCP): PBR, BSD, LCG mapping, MAC PDU assembly algorithm
+- Configured scheduling: SPS (DL), Type 1 / Type 2 configured grants (UL), CS-RNTI activation
+- HARQ: process model, NDI/RV, DL k1 timing, UL k2 timing, adaptive vs non-adaptive retransmission
+- NTN HARQ: disable mode, extended process count (up to 32), extended k1/k2
+- Random access: 4-step RACH (MSG1–MSG4), 2-step RACH (MSGA/MSGB, Rel-16), beam failure recovery
+- BSR: Short/Long/Truncated types, LCG grouping, buffer size index table, trigger conditions
+- PHR: Type 1/2 (PUSCH/PUCCH), actual vs virtual PH, extended PHR for CA
+- Scheduling Request: PUCCH resources, dsr-TransMax, SR failure handling
+- Timing Advance: RAR TA, MAC CE TA command, t-TimeAlignmentTimer, NTN UE pre-compensation
+- DRX: on-duration, inactivity, HARQ RTT timers, NTN DRX timer scaling
+- NTN-specific MAC (Rel-17/18/19): HARQ disable, extended process count, pre-compensation, TA extensions
+
+**Structure:** SKILL.md + `references/` (scheduling, harq, random-access, bsr-phr-ta)  
+**Source:** 3GPP TS 38.321 v19.1.0, Release 19, February 2026
+
+---
+
 ## Planned Skills
 
 The following layers of the 5G NR user-plane and control-plane stack are planned:
 
 | Layer | Spec | Description |
 |---|---|---|
-| **MAC** | TS 38.321 | Scheduling, logical channels, HARQ, BSR, SR |
 | **PDCP** | TS 38.323 | Header compression (ROHC), ciphering, integrity, SN, reordering, discard |
 | **RRC** | TS 38.331 | Radio resource control, configuration, measurement, mobility |
 | **PHY** | TS 38.211 / 38.212 / 38.213 | Channels, waveforms, numerology, link adaptation |
